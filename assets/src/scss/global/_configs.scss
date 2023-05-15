@@ -1,0 +1,42 @@
+// Typography - Family
+$primary-font: "Verdana", sans-serif;
+$secondary-font: "";
+$title-font: "Poppins", sans-serif;
+$fontAfree: "Font Awesome 5 Free";
+$fontAbrands: "Font Awesome 5 Brands";
+
+// Typography - Font
+$font-size: 16px;
+$min-font-size: 14px;
+$text-weight: 400;
+$text-line-height: 180%;
+$title-weight: 700;
+$title-line-height: 150%;
+
+// Typography - Colors
+$text-color: #05183399;
+$text-color-alt: "white";
+
+$title-color: #051833de;
+$title-color-alt: "white";
+
+// Colors
+$bg-color: "";
+$bg-color-alt: "";
+
+$border-color: "";
+$border-color-alt: "";
+
+$table-color: "";
+$table-color-alt: "";
+
+//Device Resolutions
+$mobile: 425px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1366px;
+$largest-container: 1230px;
+$container-padding: 15px;
+
+//Section
+$section-padding: 40px;

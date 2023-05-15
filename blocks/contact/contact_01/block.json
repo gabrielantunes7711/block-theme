@@ -1,0 +1,14 @@
+{
+  "name": "contact-01",
+  "title": "Contato 01",
+  "description": "Seção com formulário de contato, título, texto e imagem de background.",
+  "style": [],
+  "category": "formatting",
+  "icon": "list-view",
+  "keywords": ["contato", "formulário"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "contact_01.php"
+  },
+  "align": "full"
+}

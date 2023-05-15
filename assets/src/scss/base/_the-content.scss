@@ -1,0 +1,171 @@
+.the-content {
+  color: $text-color;
+
+  h2,
+  h3,
+  h4 {
+    color: $title-color;
+    font-family: $title-font;
+    font-weight: $title-weight;
+  }
+
+  h2 {
+    @include responsive_font(56px, 20px);
+    line-height: pxtoem(68px, 56px);
+    margin-bottom: pxtoem(70px, 56px);
+  }
+
+  h3 {
+    @include responsive_font(22px, 18px);
+    line-height: pxtoem(34px, 22px);
+    margin-bottom: pxtoem(56px, 22px);
+  }
+
+  h4 {
+    @include responsive_font(19px, 16px);
+    line-height: pxtoem(31px, 19px);
+    margin-bottom: pxtoem(56px, 19px);
+  }
+
+  p + h2,
+  p + h3,
+  p + h4 {
+    @include m_top(68px, 20px);
+  }
+
+  p:not(:last-child) {
+    @include m_bottom(68px, 20px);
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .alignleft {
+    float: left;
+    margin: 0 20px 20px 0;
+  }
+  .alignright {
+    float: right;
+    margin: 0 0 20px 20px;
+  }
+  .aligncenter {
+    margin: 0 auto 20px;
+    display: block;
+  }
+
+  .figure,
+  .wp-caption {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+
+  .figure::after,
+  .wp-caption::after {
+    content: "";
+
+    // background-image: url(../images/mask/post-image-mobile-single.png);
+    background-image: url(../images/mask/post-image-desk-single-801px.png);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    bottom: -5px;
+    left: -2.5px;
+    // height: 84px;
+    height: 19%;
+    position: absolute;
+    width: calc(100% + 5px);
+    z-index: 2;
+
+    @media screen and (max-width: 1023px) {
+      // background-image: url(../images/mask/post-image-mobile-artigo-412.png);
+      background-image: url(../images/mask/post-image-mobile-500px.png);
+    }
+  }
+
+  .figure img,
+  .wp-caption img {
+    border-radius: 10px;
+    height: auto;
+  }
+
+  .wp-caption,
+  .wp-caption img {
+    width: 100%;
+  }
+
+  .figure .wp-caption-text,
+  .wp-caption .wp-caption-text {
+    bottom: 0;
+    background: rgba(20, 31, 25, 0.7);
+    backdrop-filter: blur(12px);
+    color: white;
+    left: 0;
+    margin: 0;
+    // padding: 40px 10% 80px;
+    padding: 5% 10% 10%;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+  em {
+    font-style: italic;
+  }
+
+  ul {
+    @include m_bottom(68px, 20px);
+    list-style: none;
+
+    > li {
+      @include responsive_font(18px, 14px);
+      position: relative;
+      padding-left: pxtoem(49px, 18px);
+    }
+
+    > li:not(:last-child) {
+      @include m_bottom(50px, 20px);
+    }
+
+    > li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 7px;
+      display: block;
+      width: 7px;
+      height: 7px;
+      // transform: translateY(-50%);
+      border-radius: 10px;
+    }
+  }
+
+  ol {
+    // @extend %single-list;
+    @include m_bottom(68px, 20px);
+    counter-reset: li;
+    list-style: none;
+    padding-left: pxtoem(49px, 18px);
+
+    > li:not(:last-child) {
+      @include m_bottom(40px, 20px);
+    }
+
+    li {
+      counter-increment: li;
+
+      &::before {
+        content: counter(li);
+        display: inline-block;
+        font-weight: bold;
+        // width: 1em;
+        margin-right: 14px;
+        text-align: right;
+      }
+    }
+  }
+}

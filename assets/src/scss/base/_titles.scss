@@ -1,0 +1,47 @@
+.title {
+  & {
+    color: $title-color;
+    font-weight: $title-weight;
+    line-height: $title-line-height;
+  }
+
+  &--50 {
+    @extend .title;
+    @include responsive_font(50px, 22px);
+    margin-bottom: pxtoem(25px, 50px);
+  }
+
+  &--40 {
+    @extend .title;
+    @include responsive_font(40px, 20px);
+    margin-bottom: pxtoem(25px, 40px);
+  }
+
+  &--35 {
+    @extend .title;
+    @include responsive_font(35px, 19px);
+    margin-bottom: pxtoem(25px, 35px);
+  }
+
+  &--30 {
+    @extend .title;
+    @include responsive_font(30px, 18px);
+    margin-bottom: pxtoem(25px, 30px);
+  }
+
+  &--25 {
+    @extend .title;
+    @include responsive_font(25px, 17px);
+    margin-bottom: pxtoem(25px, 25px);
+  }
+
+  &--20 {
+    @extend .title;
+    @include responsive_font(20px, 16px);
+    margin-bottom: pxtoem(25px, 20px);
+  }
+
+  a {
+    color: inherit;
+  }
+}

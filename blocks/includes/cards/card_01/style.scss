@@ -1,0 +1,63 @@
+.card-01 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 347px;
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  padding: 20px;
+  transition: all ease 300ms;
+
+  &:hover {
+    border: 2px solid #ea702d;
+
+    figure {
+      transform: scale(1.1);
+    }
+  }
+
+  figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 63px;
+    height: 63px;
+    margin-left: 9px;
+    transition: all ease 300ms;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  h2 {
+    flex: 1;
+    margin: 22px 0;
+
+    @media (max-width: 767px) {
+      margin: 16px 0 11px;
+    }
+  }
+
+  .text {
+    margin-bottom: 31px;
+    letter-spacing: -1px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .call {
+    display: block;
+    margin-top: auto;
+    margin-left: 17px;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration-line: underline;
+    color: #ea702d;
+  }
+}

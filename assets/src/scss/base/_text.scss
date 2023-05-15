@@ -1,0 +1,18 @@
+.text {
+  color: $text-color;
+  font-family: $primary-font;
+
+  &--alt {
+    color: $text-color-alt;
+  }
+  p {
+    @include responsive_font(18px, 14px);
+    color: inherit;
+    font-weight: 400;
+    line-height: pxtoem(30px, 18px);
+
+    &:not(:last-child) {
+      margin: 0 0 20px;
+    }
+  }
+}

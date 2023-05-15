@@ -1,0 +1,99 @@
+.form-02 {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  right: 0;
+  width: 100%;
+  max-width: 522px;
+  padding: 47px 51px;
+  background: linear-gradient(87.58deg, #1e4889 -14.54%, #1d669b 89.45%);
+  border-radius: 4px;
+  box-shadow: (0px 0px 44px rgba(15, 128, 176, 0.05)),
+    (0px 0px 38px rgba(84, 158, 189, 0.1));
+
+  @media (max-width: 1365px) {
+    max-width: 450px;
+    padding: 25px;
+  }
+
+  @media (max-width: 1023px) {
+    position: static;
+    margin: 0 auto;
+    max-width: none;
+    transform: translate(0);
+  }
+
+  h3 {
+    margin-bottom: 17px;
+    color: white;
+  }
+
+  span {
+    display: block;
+    width: 100%;
+    margin-bottom: 27px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: white;
+  }
+
+  &__field-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    background-color: white;
+    border-radius: 4px;
+    padding: 11px 19px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 13px;
+    }
+
+    &:has(textarea) {
+      svg {
+        align-self: flex-start;
+      }
+    }
+
+    svg {
+      flex-shrink: 0;
+    }
+
+    input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 0;
+      background-color: transparent;
+
+      &::placeholder {
+        font-size: 16px;
+        line-height: 180%;
+        color: rgba(5, 24, 51, 0.38);
+      }
+    }
+
+    textarea {
+      flex: 1;
+      height: 112px;
+      resize: none;
+      border: none;
+      font-family: inherit;
+      outline: none;
+      background-color: transparent;
+
+      &::placeholder {
+        font-size: 16px;
+        line-height: 180%;
+        color: rgba(5, 24, 51, 0.38);
+      }
+    }
+  }
+
+  button {
+    width: 100%;
+    margin-top: 16px;
+  }
+}

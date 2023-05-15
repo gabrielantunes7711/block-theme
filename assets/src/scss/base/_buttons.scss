@@ -1,0 +1,37 @@
+.btn {
+  @include responsive_font(16px, 14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: max-content;
+  padding: 8px 50px;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 150%;
+  text-align: center;
+  transition: all ease 300ms;
+
+  &--primary {
+    @extend .btn;
+    background: $primary-gradient;
+    color: white;
+
+    &:hover {
+      background: white;
+      color: #ea9e2d;
+    }
+  }
+
+  &--secondary {
+    @extend .btn;
+  }
+
+  &--tertiary {
+    @extend .btn;
+  }
+
+  &--outline {
+    @extend .btn;
+  }
+}

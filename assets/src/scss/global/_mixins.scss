@@ -1,0 +1,46 @@
+@function calculateRem($size) {
+  $remSize: calc($size / 16px);
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@function pxtoem($margin, $font) {
+  $pixel: calc($margin / $font);
+  @return $pixel*1em;
+}
+
+@mixin width($width, $parentWidth) {
+  $percent: calc($width * 100 / $parentWidth);
+  max-width: $width + px;
+  width: round($percent * 1%);
+}
+
+@mixin opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content};
+  &:-moz-placeholder           {@content};
+  &::-moz-placeholder          {@content};
+  &:-ms-input-placeholder      {@content};  
+}
+
+@mixin font-awesome($content, $weight: 900, $fontBrand: false){
+  @if $fontBrand{
+    content: fa-content($content);
+    font-family: $fontAbrands;
+  }
+
+  @else{
+    content: fa-content($content);
+    font-family: $fontAfree;
+    font-weight: $weight;
+  }
+
+}

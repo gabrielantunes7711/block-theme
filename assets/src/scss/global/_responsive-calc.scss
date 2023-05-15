@@ -1,0 +1,209 @@
+$defaultMarginBottom: 30px;
+$defaultPadding: 30px;
+
+$resolucao: (
+  $desktop: 0.71,
+  $laptop: 0.53,
+  $tablet: 0.4,
+  $mobile: 0.22,
+);
+
+@function verifica_tamanho($valor, $valorPadrao, $percentual) {
+  @if ($valor * $percentual) < $valorPadrao {
+    @return $valorPadrao;
+  }
+
+  @return $valor * $percentual;
+}
+
+@mixin m_bottom($valor, $min: $defaultMarginBottom) {
+  margin-bottom: $valor;
+  $ultimoCiclo: true;
+
+  @each $resolucao, $percentual in $resolucao {
+    @if ($valor * $percentual) >=$min {
+      @media (max-width: $resolucao) {
+        margin-bottom: verifica_tamanho($valor, $min, $percentual);
+      }
+    } @else if $ultimoCiclo {
+      @media (max-width: $resolucao) {
+        margin-bottom: verifica_tamanho($valor, $min, $percentual);
+      }
+
+      $ultimoCiclo: false;
+    }
+  }
+}
+
+@mixin m_top($valor, $min: $defaultMarginBottom) {
+  margin-top: $valor;
+  $ultimoCiclo: true;
+
+  @each $resolucao, $percentual in $resolucao {
+    @if ($valor * $percentual) >=$min {
+      @media (max-width: $resolucao) {
+        margin-top: verifica_tamanho($valor, $min, $percentual);
+      }
+    } @else if $ultimoCiclo {
+      @media (max-width: $resolucao) {
+        margin-top: verifica_tamanho($valor, $min, $percentual);
+      }
+
+      $ultimoCiclo: false;
+    }
+  }
+}
+
+@mixin responsive_height($valor, $minimo) {
+  height: $valor;
+  $ultimoCiclo: true;
+
+  @each $resolucao, $percentual in $resolucao {
+    @if ($valor * $percentual) >=$minimo {
+      @media (max-width: $resolucao) {
+        height: verifica_tamanho($valor, $minimo, $percentual);
+      }
+    } @else if $ultimoCiclo {
+      @media (max-width: $resolucao) {
+        height: verifica_tamanho($valor, $minimo, $percentual);
+      }
+
+      $ultimoCiclo: false;
+    }
+  }
+}
+
+@mixin responsive_padding($valor) {
+  padding: $valor 0;
+  $ultimoCiclo: true;
+
+  @each $resolucao, $percentual in $resolucao {
+    // @media (max-width: $resolucao){
+    //     padding: verifica_tamanho($valor, $defaultPadding, $percentual) 0;
+    // }
+    @if ($valor * $percentual) >=$defaultPadding {
+      @media (max-width: $resolucao) {
+        padding: verifica_tamanho($valor, $defaultPadding, $percentual) 0;
+      }
+    } @else if $ultimoCiclo {
+      @media (max-width: $resolucao) {
+        padding: verifica_tamanho($valor, $defaultPadding, $percentual) 0;
+      }
+
+      $ultimoCiclo: false;
+    }
+  }
+}
+
+@mixin padding_bottom($valor, $min: $defaultPadding) {
+  padding-bottom: $valor;
+  $ultimoCiclo: true;
+
+  @each $resolucao, $percentual in $resolucao {
+    @if ($valor * $percentual) >=$min {
+      @media (max-width: $resolucao) {
+        padding-bottom: verifica_tamanho($valor, $min, $percentual);
+      }
+    } @else if $ultimoCiclo {
+      @media (max-width: $resolucao) {
+        padding-bottom: verifica_tamanho($valor, $min, $percentual);
+      }
+
+      $ultimoCiclo: false;
+    }
+  }
+}
+
+@mixin padding_top($valor, $min: $defaultPadding) {
+  padding-top: $valor;
+  $ultimoCiclo: true;
+
+  @each $resolucao, $percentual in $resolucao {
+    @if ($valor * $percentual) >=$min {
+      @media (max-width: $resolucao) {
+        padding-top: verifica_tamanho($valor, $min, $percentual);
+      }
+    } @else if $ultimoCiclo {
+      @media (max-width: $resolucao) {
+        padding-top: verifica_tamanho($valor, $min, $percentual);
+      }
+
+      $ultimoCiclo: false;
+    }
+  }
+}
+
+@mixin padding_top_bottom($valorTop, $valorBottom) {
+  padding-top: $valorTop;
+  padding-bottom: $valorBottom;
+  $ultimoCiclo: true;
+  $valorMaior: 0;
+
+  @if $valorTop>$valorBottom {
+    $valorMaior: $valorTop;
+  } @else {
+    $valorMaior: $valorBottom;
+  }
+
+  @each $resolucao, $percentual in $resolucao {
+    // @media (max-width: $resolucao){
+    //     padding: verifica_tamanho($valor, $defaultPadding, $percentual) 0;
+    // }
+    @if ($valorMaior * $percentual) >=$defaultPadding {
+      @media (max-width: $resolucao) {
+        padding-top: verifica_tamanho($valorTop, $defaultPadding, $percentual);
+        padding-bottom: verifica_tamanho(
+          $valorBottom,
+          $defaultPadding,
+          $percentual
+        );
+      }
+    } @else if $ultimoCiclo {
+      @media (max-width: $resolucao) {
+        padding-top: verifica_tamanho($valorTop, $defaultPadding, $percentual);
+        padding-bottom: verifica_tamanho(
+          $valorBottom,
+          $defaultPadding,
+          $percentual
+        );
+      }
+
+      $ultimoCiclo: false;
+    }
+  }
+}
+
+@mixin responsive_all_padding(
+  $valorVertical,
+  $valorHorizontal,
+  $minimoVertical: $defaultPadding,
+  $minimoHorizontal: $defaultPadding
+) {
+  padding: $valorVertical $valorHorizontal;
+
+  @each $resolucao, $percentual in $resolucao {
+    @media (max-width: $resolucao) {
+      padding: verifica_tamanho($valorVertical, $minimoVertical, $percentual)
+        verifica_tamanho($valorHorizontal, $minimoHorizontal, $percentual);
+    }
+  }
+}
+
+@mixin responsive_font($valor, $valorPadrao) {
+  @include font-size($valor);
+  $ultimoCiclo: true;
+
+  @each $resolucao, $percentual in $resolucao {
+    @if ($valor * $percentual) >=$valorPadrao {
+      @media (max-width: $resolucao) {
+        @include font-size(verifica_tamanho($valor, $valorPadrao, $percentual));
+      }
+    } @else if $ultimoCiclo {
+      @media (max-width: $resolucao) {
+        @include font-size(verifica_tamanho($valor, $valorPadrao, $percentual));
+      }
+
+      $ultimoCiclo: false;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "hero-01",
+  "title": "Hero 01",
+  "description": "Transição de seção.",
+  "style": [],
+  "category": "formatting",
+  "icon": "align-left",
+  "keywords": ["hero, slider, banner"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "hero_01.php"
+  },
+  "align": "full"
+}

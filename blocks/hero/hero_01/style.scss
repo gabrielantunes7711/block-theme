@@ -1,0 +1,122 @@
+.hero-01 {
+  padding: 0;
+
+  .owl-nav {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+  }
+
+  .owl-dots {
+    position: absolute;
+    bottom: 18px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+
+    .owl-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: white;
+
+      &.active {
+        background-color: #ea5e2d;
+      }
+    }
+  }
+
+  &__banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 110px 0;
+    background-image: linear-gradient(
+      85.41deg,
+      #26559c -24.67%,
+      #032b68 8.06%,
+      #1e4889 36.91%,
+      rgba(64, 186, 149, 0.13) 56.34%
+    );
+
+    @media (max-width: 1023px) {
+      padding: 50px 0;
+      background-image: linear-gradient(
+        85.41deg,
+        #26559c -44.67%,
+        #032b68 -6.94%,
+        #1e4889 -0.09%,
+        rgba(64, 186, 149, -1.87) 188.34%
+      );
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    width: 100%;
+    max-width: 454px;
+
+    @media (max-width: 767px) {
+      gap: 10px;
+    }
+  }
+
+  h2 {
+    font-weight: 700;
+    line-height: 124%;
+    color: white;
+  }
+
+  .text {
+    line-height: 180%;
+    color: white;
+    opacity: 0.8;
+  }
+
+  .hero-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 30px;
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+      gap: 15px 30px;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      .linear-border {
+        width: 46px;
+        height: 46px;
+
+        @media (max-width: 767px) {
+          width: 30px;
+          height: 30px;
+        }
+
+        &::before {
+          width: 90%;
+          height: 90%;
+        }
+      }
+
+      span {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: #ffffff;
+        opacity: 0.8;
+      }
+    }
+  }
+}

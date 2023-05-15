@@ -1,0 +1,14 @@
+{
+  "name": "card-loop-01",
+  "title": "Looping de Cards 01",
+  "description": "Seção com título, descrição e looping de cards.",
+  "style": [],
+  "category": "formatting",
+  "icon": "list-view",
+  "keywords": ["looping", "cards"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "card_loop_01.php"
+  },
+  "align": "full"
+}

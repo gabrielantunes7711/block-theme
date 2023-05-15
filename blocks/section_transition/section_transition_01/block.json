@@ -1,0 +1,14 @@
+{
+  "name": "section-transition-01",
+  "title": "Transição de Seção 01",
+  "description": "Transição de seção.",
+  "style": [],
+  "category": "formatting",
+  "icon": "align-left",
+  "keywords": ["transição"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "section_transition_01.php"
+  },
+  "align": "full"
+}

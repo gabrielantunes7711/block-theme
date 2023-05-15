@@ -1,0 +1,5 @@
+<svg class='mask' clipPathUnits='objectBoundingBox'>
+  <clipPath id="mask_01">
+    <path d="M0 8.00001C0 3.58174 3.58172 0 8 0H342C452.457 0 542 89.5431 542 200V636C542 640.418 538.418 644 534 644H7.99999C3.58172 644 0 640.418 0 636V8.00001Z" fill="white"/>
+  </clipPath>
+</svg>

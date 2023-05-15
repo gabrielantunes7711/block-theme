@@ -1,0 +1,14 @@
+{
+  "name": "content-01",
+  "title": "Conteúdo 01",
+  "description": "Seção com imagem, título, texto e botão.",
+  "style": [],
+  "category": "formatting",
+  "icon": "align-left",
+  "keywords": ["texto"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "content_01.php"
+  },
+  "align": "full"
+}
